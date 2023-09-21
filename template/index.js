@@ -89,10 +89,10 @@ function listar() {
 	let i = 0
 	console.log("Listando dados")
 
-	
+	//cria um laço de repetição que verifica os treinadores dentro de dados
 	for(let treinador of dados){
 		console.log(treinador.NomeTreinador)
-
+		//cria um laço de repetição que verifica os pokémon de pokemons dentro de treinador
 		for(let pokémon of treinador.Pokemons) {
 			console.log(pokémon)
 		}
@@ -108,8 +108,11 @@ function buscar() {
 		return
 	}
 
+	//definimos dadoEncontrado como falso
 	let dadoEncontrado = false
 
+	//cria um laço de repetição que verifica o treinador dentro de dados, compara se buscarTreinador é estritamente igual ao NomeTreinador dentro de treinador,
+	//se for, cria uma laço de repetição que compara os pokémon em pokemons dentro de treinador
 	for (let treinador of dados) {
 		if (buscarTreinador === treinador.NomeTreinador) {
 			dadoEncontrado = true
@@ -121,6 +124,7 @@ function buscar() {
 		}
 	}
 
+	//Se o dadoEncontrado continuar falso ele imprimira que o ID não foi encontrado
 	if (!dadoEncontrado) {
 		console.log(`O ID de treinador ${buscarTreinador} não existe!`)
 	}
